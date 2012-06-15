@@ -10,9 +10,10 @@ import org.junit.*
 class VehicleTests {
 
     void testSomething() {
+		def accordModel = new VehicleModel(name: 'Accord', packageName: 'LX')
 		def hondaAccord = new Vehicle(
 		                make: "Honda",
-						model: "Accord",
+						model: accordModel,
 						year: 2006)
 
 		        mockForConstraintsTests(Vehicle, [hondaAccord])

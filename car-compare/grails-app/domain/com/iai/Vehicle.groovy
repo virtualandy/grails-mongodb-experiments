@@ -2,12 +2,12 @@ package com.iai
 
 class Vehicle {
 
-	String model
+	VehicleModel model
 	String make
 	Integer year
+	static embedded = ['model']
 	
     static constraints = {
-		model blank: false
 		make blank: false
 		year size: 1900..2020
     }
