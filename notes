@@ -1,0 +1,8 @@
+Notes from Grails/MongoDB SkillsMatter video
+
+Can use mongo and sql/hibernate together. Map domain classes with
+static mapwith = "mongo"
+
+Might try that later, since we can then encrypt stuff in mysql (I guess).
+
+
