@@ -16,14 +16,14 @@ class VehicleTests {
 						model: accordModel,
 						year: 2006)
 
-		        mockForConstraintsTests(Vehicle, [hondaAccord])
-				assert hondaAccord.make == "Honda"
+		mockForConstraintsTests(Vehicle, [hondaAccord])
+		assert hondaAccord.make == "Honda"
 				
-		        def newCar = new Vehicle(make: "")
-		        assert !newCar.validate()
-				assert "nullable" == newCar.errors["model"]
-				assert "blank" == newCar.errors["make"]
+		def newCar = new Vehicle(make: "")
+		assert !newCar.validate()
+		assert "nullable" == newCar.errors["model"]
+		assert "blank" == newCar.errors["make"]
 		       
-				def oldCar = new Vehicle(make: 'Acura', model: 'Integra', year: 2000)
+		def oldCar = new Vehicle(make: 'Acura', model: 'Integra', year: 2000)
     }
 }

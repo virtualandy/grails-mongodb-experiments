@@ -1,5 +1,8 @@
 package com.iai
 
+import org.bson.types.ObjectId
+
+
 class VehicleModel {
 
 	/* ie the 'xi' in 323xi or the 'XT' in Forester XT */

@@ -1,7 +1,10 @@
 package com.iai
 
+import org.bson.types.ObjectId
+
 class Vehicle {
 
+	ObjectId id
 	VehicleModel model
 	String make
 	Integer year
