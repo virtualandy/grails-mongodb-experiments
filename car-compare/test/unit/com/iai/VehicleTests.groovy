@@ -3,18 +3,23 @@ package com.iai
 import grails.test.mixin.*
 import org.junit.*
 
+import org.apache.commons.logging.LogFactory
+
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(Vehicle)
 class VehicleTests {
+	
+	def log = LogFactory.getLog(getClass()) 
 
     void testSomething() {
 		def accordModel = new VehicleModel(name: 'Accord', packageName: 'LX')
 		def hondaAccord = new Vehicle(
 		                make: "Honda",
 						model: accordModel,
-						year: 2006)
+						year: 2005)
+		log.debug('created an accord in unit test')
 
 		mockForConstraintsTests(Vehicle, [hondaAccord])
 		assert hondaAccord.make == "Honda"

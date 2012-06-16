@@ -5,12 +5,17 @@ import org.junit.*
 import grails.test.mixin.*
 import com.gmongo.GMongo
 
+import org.apache.commons.logging.LogFactory
+
 @TestFor(Vehicle)
 class VehicleInMongoTests {
 
 	Vehicle accord
 	Vehicle tsx
 	def db
+	def mongo
+	
+	def log = LogFactory.getLog(getClass()) 
 	
     @Before
     void setUp() {
@@ -25,17 +30,21 @@ class VehicleInMongoTests {
 		
 		// Get a db reference in the old fashion way
 		//db = mongo.getDB("car-compare-db")
+		log.debug('trying to get the name of collection: ' + mongo.getClass())
+		println('hello' + log.getClass())
 	
     }
 
     @After
     void tearDown() {
         // Tear down logic here
-		disconnect()
+
     }
 
     @Test
     void testVehiclesAreSaved() {
+		log.debug('*** It works! ***');
+		
 		accord.save(flush: true)
 		//def vehicle = db.vehicle.findOne() 
 		def vehicle = Vehicle.findByMake("Honda")
