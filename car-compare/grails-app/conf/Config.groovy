@@ -79,12 +79,13 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 	appenders {
-		rollingFile name: 'carcompare', file:'./car-compare.log', layout:pattern(conversionPattern: '%c{2} %m%n'), maxSize: 1024
+		rollingFile name: 'carcompare', file:'./car-compare.log', layout:pattern(conversionPattern: '%d%d{HH:mm:ss} %c{3} %m%n'), maxSize: 1024
+		
 	}
 	
 	debug carcompare: ['grails.app.services.com.iai',
 		  'grails.app.controllers.com.iai',
-		  'grails.app.domain.com.iai', 'grails.test']
+		  'grails.app.domain.com.iai', 'grails.test', 'com.iai']
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP

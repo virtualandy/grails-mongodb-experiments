@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(Vehicle)
-class VehicleTests {
+class VehicleTests extends GroovyTestCase {
 	
 	def log = LogFactory.getLog(getClass()) 
 
@@ -23,6 +23,7 @@ class VehicleTests {
 
 		mockForConstraintsTests(Vehicle, [hondaAccord])
 		assert hondaAccord.make == "Honda"
+		hondaAccord.save()
 				
 		def newCar = new Vehicle(make: "")
 		assert !newCar.validate()

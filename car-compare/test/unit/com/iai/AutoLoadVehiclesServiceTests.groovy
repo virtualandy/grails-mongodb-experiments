@@ -9,7 +9,7 @@ import org.junit.*
 @TestFor(AutoLoadVehiclesService)
 @Mock([Vehicle])
 class AutoLoadVehiclesServiceTests {
-
+	
     void testLoadAndSave() {
 		AutoLoadVehiclesService alvs = new AutoLoadVehiclesService()
 		def id = alvs.loadAndSave()
